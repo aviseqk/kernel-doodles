@@ -14,6 +14,16 @@ struct job_metadata* get_new_job() {
 
 int add_new_job(pid_t pid, pid_t pgid, enum job_state state, char* cmdline, int is_background) {
     struct job_metadata *ptr = head, *prev = NULL;
+    
+    if (head == NULL) {
+        head = get_new_job();
+        head->pid = pid;
+        head->cmdline = cmdline;
+        head->pgid = 0;
+        head->state = state;
+        head->is_background = is_background;
+        return 1;
+    }
 
     while (ptr != NULL) {
         prev = ptr;

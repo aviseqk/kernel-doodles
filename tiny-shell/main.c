@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
     create_self_pipe();
 
-    init_job_table();
+//    init_job_table();
 
     for(;;) {
 
@@ -163,10 +163,11 @@ int main(int argc, char *argv[])
                 break;
         }
 
-        free(command);
-        jobs_memory_cleanup();
     }
     
+    //free(command);
+    jobs_memory_cleanup();
+
     // explicitly ignoring these parameters as currently not being used
     (void)argc;
     (void)argv;

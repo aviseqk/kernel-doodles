@@ -4,7 +4,7 @@
 
 It employs Process Creation, Exec & Pipe calls, Execution and Environment Passing
 
-### Syscalls - fork(), execvp(), waitpid(), pipe(), dup2(), exit()
+### Syscalls - fork(), execvp(), waitpid(), pipe(), exit(), signal(), sigaction()
 
 #### Design Choices
 
